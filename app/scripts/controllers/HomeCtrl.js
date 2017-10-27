@@ -5,5 +5,5 @@
 
   angular
     .module('blocChat')
-    .cotroller('HomeCtrl', [HomeCtrl]);
+    .controller('HomeCtrl', [HomeCtrl]);
 })();

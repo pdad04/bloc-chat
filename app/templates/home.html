@@ -1,4 +1,7 @@
 <h1>Home Page</h1>
+<div ng-controller="ModalCtrl as modal">
+  <button type="button" ng-click="modal.open()">New Room</button>
+</div>
 <div ng-repeat="room in home.rooms">
-  {{room.$value}}
+  {{room.name}}
 </div>

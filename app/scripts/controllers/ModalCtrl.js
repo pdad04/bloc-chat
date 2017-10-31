@@ -2,8 +2,18 @@
   function ModalCtrl(Room,$uibModal) {
     var RoomName = {};
     this.add = Room.add;
-    this.modalInstance = null;
+
+    /**
+    * @desc Room name String
+    * @type String
+    */
     this.name = "";
+
+    /**
+    * @desc error string if room name is not entered
+    * @type String
+    */
+    this.error = '';
 
     /**
     * @function open
@@ -33,11 +43,12 @@
     */
     this.create = function() {
       if(!this.name){
-        alert("You need to enter a room name");
+        this.error = 'Please enter a room name';
       }else{
-      RoomName.name = this.name;
-      this.add(RoomName);
-      modalInstance.close();
+        this.error = '';
+        RoomName.name = this.name;
+        this.add(RoomName);
+        modalInstance.close();
     }
     }
   }

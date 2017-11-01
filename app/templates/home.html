@@ -2,6 +2,9 @@
 <div ng-controller="ModalCtrl as modal">
   <button type="button" ng-click="modal.open()">New Room</button>
 </div>
-<div ng-repeat="room in home.rooms">
-  {{room.name}}
-</div>
+<ul>
+  <li ng-repeat="room in home.rooms">
+    <a ng-click="home.activeRoom(room)">{{room.name}}</a>
+  </li>
+</ul>
+<h3>{{home.roomName}}</h3>

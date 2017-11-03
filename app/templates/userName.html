@@ -1,0 +1,5 @@
+<h2>Set username</h2>
+<label for="user-name">Display name when messages are sent</label>
+<div ng-show="userModal.error">{{userModal.error}}</div>
+<input type="text" for="user-name" ng-model="userModal.userName" />
+<button ng-click="userModal.setUsername()">Set Username</button>

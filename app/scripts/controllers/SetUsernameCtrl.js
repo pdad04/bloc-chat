@@ -8,7 +8,7 @@
         this.error = "Username cannot be blank!";
       }else {
         this.error = '';
-        $cookies.put('blockChatCurrentUser',this.userName);
+        $cookies.put('blocChatCurrentUser',this.userName);
         userModalInstance.close();
       }
     }

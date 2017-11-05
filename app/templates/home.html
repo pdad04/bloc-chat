@@ -9,5 +9,8 @@
 </ul>
 <h3>{{home.roomName}}</h3>
 <p ng-repeat="messages in home.message">
-  {{messages.content}}
+  {{messages.content}} {{messages.sentAt}}
 </p>
+<form name="message">
+  <input name="message-content" type="text" ng-model="home.SendMessage.content" required /><button ng-click="home.sendMessage()" ng-disabled="message.$invalid">Send</button>
+</form>

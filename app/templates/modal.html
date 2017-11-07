@@ -1,8 +1,12 @@
-<h2>Create new room</h2>
-<label for="room-name">Enter a room name</label>
-<div ng-show="modal.error">
-  {{modal.error}}
+<div class="my-modal">
+  <h2>Create new room</h2>
+  <p class="room-name">Enter a room name</p>
+  <div class="error" ng-show="modal.error">
+    **{{modal.error}}**
+  </div>
+  <input type="text" placeholder="room name" id="room-name" ng-model="modal.name" />
+  <div class="my-buttons">
+    <button class="btn" ng-click="modal.close()">Cancel</button>
+    <button class="btn create" ng-click="modal.create()">Create</button>
+  </div>
 </div>
-<input type="text" id="room-name" ng-model="modal.name" />
-<button ng-click="modal.close()">Cancel</button>
-<button ng-click="modal.create()">Create</button>

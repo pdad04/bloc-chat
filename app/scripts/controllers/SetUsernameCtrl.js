@@ -5,7 +5,7 @@
 
     this.setUsername = function() {
       if(!this.userName){
-        this.error = "Username cannot be blank!";
+        this.error = "You must enter a username!";
       }else {
         this.error = '';
         $cookies.put('blocChatCurrentUser',this.userName);

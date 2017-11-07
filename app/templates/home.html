@@ -1,16 +1,29 @@
-<h1>Home Page</h1>
-<div ng-controller="ModalCtrl as modal">
-  <button type="button" ng-click="modal.open()">New Room</button>
-</div>
-<ul>
-  <li ng-repeat="room in home.rooms">
-    <a ng-click="home.activeRoom(room)">{{room.name}}</a>
-  </li>
-</ul>
-<h3>{{home.roomName}}</h3>
-<p ng-repeat="messages in home.message">
-  {{messages.content}} {{messages.sentAt}}
-</p>
-<form name="message">
-  <input name="message-content" type="text" ng-model="home.SendMessage.content" required /><button ng-click="home.sendMessage()" ng-disabled="message.$invalid">Send</button>
-</form>
+<section id="rooms">
+  <div id="header" ng-controller="ModalCtrl as modal">
+    <h1>Bloc Chat</h1>
+    <button type="button" class="new-room-button btn btn-outline-secondary" ng-click="modal.open()">New Room</button>
+  </div>
+  <ul>
+    <li ng-repeat="room in home.rooms">
+      <a ng-click="home.activeRoom(room)">{{room.name}}</a>
+    </li>
+  </ul>
+</section>
+<section id="messages" ng-show="home.roomSelected">
+  <h3>{{home.roomName}}</h3>
+  <div id="message-content" ng-repeat="messages in home.message">
+    <h5>{{messages.userName}}</h5>
+    <p class="sent">{{messages.sentAt}}</p>
+    <p class="content">{{messages.content}}</p>
+  </div>
+  <div id="message-container">
+    <div id="message-text">
+      <form name="message">
+        <input name="message-content" type="text" placeholder="Enter Message" ng-model="home.SendMessage.content" required />
+      </form>
+    </div>
+  </div>
+    <div id="send">
+      <button class="send-button btn btn-outline-secondary" ng-click="home.sendMessage()" ng-disabled="message.$invalid">Send</button>
+    </div>
+</section>

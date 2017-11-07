@@ -9,13 +9,13 @@
     this.activeRoom = function(room){
       this.roomName = room.name;
       this.SendMessage.roomId = room.$id;
-      this.SendMessage.userName = $cookies.get('blocChatCurrentUser');
       this.message = Message.getByRoomId(room.$id);
       this.roomSelected = true;
     };
 
     this.sendMessage = function() {
       this.SendMessage.sentAt = new Date().toLocaleString();
+      this.SendMessage.userName = $cookies.get('blocChatCurrentUser');
       Message.send(this.SendMessage);
       this.SendMessage.content = '';
     }

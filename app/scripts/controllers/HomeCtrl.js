@@ -20,6 +20,12 @@
       this.SendMessage.content = '';
     }
 
+    this.onReturn = function(event) {
+      if(event.charCode === 13) {
+        this.sendMessage();
+      }
+    }
+
   }
 
   angular

@@ -19,7 +19,7 @@
   <div id="message-container">
     <div id="message-text">
       <form name="message">
-        <input name="message-content" type="text" placeholder="Enter Message" ng-model="home.SendMessage.content" required />
+        <input name="message-content" type="text" placeholder="Enter Message" ng-model="home.SendMessage.content" ng-keypress=home.onReturn($event) required />
       </form>
     </div>
   </div>

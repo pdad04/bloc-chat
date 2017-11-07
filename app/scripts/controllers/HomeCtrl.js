@@ -4,12 +4,12 @@
     this.roomName = '';
     this.SendMessage = {};
     this.message = {};
-    this.SendMessage.userName = $cookies.get('blocChatCurrentUser');
     this.roomSelected = false;
 
     this.activeRoom = function(room){
       this.roomName = room.name;
       this.SendMessage.roomId = room.$id;
+      this.SendMessage.userName = $cookies.get('blocChatCurrentUser');
       this.message = Message.getByRoomId(room.$id);
       this.roomSelected = true;
     };
